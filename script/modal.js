@@ -10,3 +10,10 @@ closeM.forEach(function (item, id) {
     });
 });
 
+document.querySelectorAll('button').forEach(item => {
+    item.addEventListener('click', function () {
+        modal.forEach(element => {
+            element.classList.remove('active');
+        });
+    })
+})

@@ -191,3 +191,4 @@ styleBracelet.forEach(item => {
         reloadStyle();
     })
 })
+
