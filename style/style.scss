@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+}
+* {
+    box-sizing:border-box;
+}
+
+button {
+    width: 100%;
+    border: 2px solid #FFFFFF;
+    height: 81px;
+    vertical-align: center;
+
+    text-transform: uppercase;
+
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+
+    color: #0005;
+    font-family: 'Roboto';
+
+    position: relative;
+    
+    img {
+        display:block;
+        width: 100%;
+    }
+
+    &:before {
+        content: '';
+        width: 100%;
+        background: #fff;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        
+        left: 100%;
+        bottom: 0%;
+        transition: 0.5s;
+        z-index: -1;
+    }
+}
+
+button:hover,
+button.active {
+    color: #000;
+    z-index: 5;
+    &:before {
+        left: 0%;
+        transition: 0.5s;
+    }
+}
+
+li::marker {
+    font-size: 0;
+}
+.main-block {
+    
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #EEEDED;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .price {
+        flex: 0 0 25%;
+        height: 100vh;
+        border: 2px solid #fff;
+
+        padding: 10px;
+
+        h2 {
+            font-family: Roboto;
+            font-size: 36px;
+            line-height: 42px;
+            color: #000000;
+        }
+
+        .type {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 21px;
+            display: flex;
+            align-items: center;
+            color: #000000;
+            .var {
+                font-weight: bold;
+            }
+        }
+
+        #mainPrice {
+            text-align: right;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 48px;
+            
+            color: #000000;            
+        }
+    }
+
+    .result {
+        flex: 0 0 50%;
+        padding-top: 100%;
+        width: 100%;
+        position: relative;
+        .bracelet {
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            transition: 0.5s;
+        }
+        .fish {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: 0.5s;
+        }
+    }
+
+    .variation {
+        flex: 0 0 25%;
+        height: 100vh;
+        border: 2px solid #fff;
+
+        ul, li {
+            padding: 0;
+            margin: 0;
+        }
+        
+    }
+
+    .modal {
+        position: fixed;
+
+        
+
+        z-index: 100;
+        transition: 0.5s linear;
+        
+        height: 100vh;
+        width: 25%;
+        right: -100%;
+        
+        background: #EEEDED;
+
+        display:flex;
+        flex-direction: column;
+
+        .items {
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        .close {
+            width: 30px;
+            height: 30px;
+
+            background: #C0C0C0;
+            position: absolute;
+
+            transition: 0.5s;
+
+            top: 0;
+            left: -30px;
+
+            span {
+                height: 2px;
+                width: 30px;
+                position: absolute;
+                top: 13px;
+                background: rgba($color: #000000, $alpha: 0.5)
+            }
+            span:nth-child(1) {
+                transform: rotate(45deg)
+            }
+            span:nth-child(2) {
+                transform: rotate(-45deg)
+            }
+
+            &:hover {
+                background: #999898;
+                transform: scale(1.2,1.2);
+                span {
+                    background: rgba($color: #000000, $alpha: 1)
+                }
+            }
+        }
+    }
+    .active {right: 0;transition: 0.5s linear;}
+}
+
+@media (max-device-width: 770px) {
+    .main-block {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+
+        .price {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: min-content;
+            max-height: 270px;
+            
+            border: 2px solid #fff;
+    
+            &>* {
+                width: 50%;
+            }
+            p, h2 {
+                height: min-content;
+                margin: 10px;
+            }
+
+            #mainPrice {
+                height: 100%;
+                width: 30%;
+            }
+        }
+
+        .result {
+            position: relative;
+            top: -20%;
+            width: 50%;
+            transform: scale(2,2);    
+            height: 50%;
+        }
+
+        .variation {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            height: auto;
+            ul {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 1fr 1fr;
+                
+            }
+        }
+        .modal {
+            width: 40%;
+        }
+    }
+}
+
+@media (max-device-width: 500px) {
+    .main-block {
+        .modal {
+            width: 70%;
+        }
+    }
+}

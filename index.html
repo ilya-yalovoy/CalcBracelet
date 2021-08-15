@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./style/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <div class="main-block">
+            <div class="price">
+                <h2 class="styleBraceletH2">Rambolino</h2>                                       <!---->
+
+                <p class="type">Bracelet size: <span class="var"   id="sizeBracelet" >Medium (16cm / 6.3”)</span></p>   <!---->
+                <p class="type">Bracelet color: <span class="var"  id="colorBracelet">Black</span></p>   <!---->
+                <p class="type">Fish color: <span class="var"      id="colorFish">Yellow</span></p>   <!---->
+
+                <p id="mainPrice">€69</p>                                                <!---->
+            </div>
+
+            <div class="result">
+                <div class="fish"></div>
+                <div class="bracelet"></div>
+            </div>
+
+            <div class="variation">
+                <ul>
+                    <li><button class="buttonVariator" onclick="document.querySelector('#bStyle').classList.add('active')">BRACELET STYLE</button></li>
+                    <li><button class="buttonVariator" onclick="document.querySelector('#bSize').classList.add('active')">BRACELET SIZE</button></li>
+                    <li><button class="buttonVariator" onclick="document.querySelector('#fColor').classList.add('active')">COLOR FISH</button></li>
+                    <li><button class="buttonVariator" onclick="document.querySelector('#bColor').classList.add('active')">BRACELET COLOR</button></li>
+                </ul>
+            </div>
+
+            <div class="modal" id="bStyle">
+                <div class="close">
+                    <div><span></span><span></span></div>
+                </div>
+
+                <button name="Rombolino" id="style">Rombolino</button>
+                <button name="Flatsea" id="style">Flatsea</button>
+                <button name="Pamponero" id="style">Pampo nero</button>
+                <button name="Verasper" id="style">Verasper</button>
+                
+            </div>
+
+            <div class="modal" id="bSize" >
+                <div class="close">
+                    <div><span></span><span></span></div>
+                </div>
+                
+                <button class="size">Small (15cm / 5.9”)</button>
+                <button class="size">Medium (16cm / 6.3”)</button>
+                <button class="size">Large (17cm / 6.7”)</button>
+                
+            </div>
+
+            <div class="modal" id="bColor">
+                <div class="close">
+                    <div><span></span><span></span></div>
+                </div>
+
+                <div class="items" id="itemsBColor"></div>
+            </div>
+
+            <div class="modal" id="fColor">
+                <div class="close">
+                    <div><span></span><span></span></div>
+                </div>
+
+                <div class="items" id="itemsFColor"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="./script/script.js"></script>
+    <script src="./script/modal.js"></script>
+</body>
+</html>
+
+
