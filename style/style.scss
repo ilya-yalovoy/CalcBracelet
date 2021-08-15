@@ -202,7 +202,7 @@ li::marker {
             }
         }
     }
-    .active {right: 0;transition: 0.5s linear;}
+    .modal.active {right: 0;transition: 0.5s linear;}
 }
 
 @media (max-device-width: 770px) {
