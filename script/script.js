@@ -84,8 +84,8 @@ let Verasper = {
 }
 
 let activeBracelet = {
-    activeStyle: Verasper,
-    activStyleStr: 'Flatsea',
+    activeStyle: Rombolino,
+    activStyleStr: 'Rombolino',
     colorBracelet: 1,
     colorFish: 1,
     sizeBracelet: 1,
