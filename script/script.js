@@ -4,6 +4,7 @@ let Rombolino = {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% auto',
+        braceletName: ['', 'Black', 'Camel', 'Red', 'Light blue', 'Blue', 'Avio', 'Orange', 'Brown', 'Dark brown', 'Light green', 'Dark green', 'Coral', 'Pastel pink', 'Lilac', 'Dark grey', 'Celestial'],
         colorNum: 16,
         top: 0,
         left: 0,
@@ -13,10 +14,11 @@ let Rombolino = {
         backgroundImage: 'url("./img/Fish/1.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '113% auto',
-        top: '3.2%',
-        left: '2%',
-        transform: 'rotate(0deg)'
+        backgroundSize: '58% auto',
+        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Purple', 'Dark Red', 'Silver', 'Black', 'Blue', 'Blue Denim', 'Mustard', 'Eggplant', 'Barbie Pink', 'Mauve'],
+        top: '2.9%',
+        left: '0.5%',
+        transform: 'rotate(180deg)'
     }
 }
 let Flatsea = {
@@ -25,6 +27,7 @@ let Flatsea = {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% auto',
+        braceletName: ['', 'Grey', 'Beige', 'Fucsia', 'Purple', 'Orange', 'Red', 'Dark red', 'Bordeaux','Mud', 'Dark brown', 'Dark chocolate', 'Turquoise', 'Dark blue'],
         colorNum: 12,
         top: 0,
         left: 0,
@@ -34,10 +37,11 @@ let Flatsea = {
         backgroundImage: 'url("./img/Fish/1.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '121.5% auto',
-        top: '4%',
-        left: '-2.4%',
-        transform: 'rotate(-170deg)'
+        backgroundSize: '65.5% auto',
+        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Purple', 'Dark Red', 'Silver', 'Black', 'Blue', 'Blue Denim', 'Mustard', 'Eggplant', 'Barbie Pink', 'Mauve'],
+        top: '4.5%',
+        left: '-0.5%',
+        transform: 'rotate(12.5deg)'
     }
 }
 let Pamponero = {
@@ -46,6 +50,7 @@ let Pamponero = {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '130% auto',
+        braceletName: ['', 'Grey', 'Beige', 'Fucsia', 'Purple', 'Orange', 'Red', 'Dark red', 'Bordeaux','Mud', 'Dark brown', 'Dark chocolate', 'Turquoise', 'Dark blue'],
         colorNum: 13,
         top: 0,
         left: 0,
@@ -55,10 +60,11 @@ let Pamponero = {
         backgroundImage: 'url("./img/Fish/1.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '110% auto',
-        top: '2%',
-        left: '-0.5%',
-        transform: 'rotate(0deg)'
+        backgroundSize: '57% auto',
+        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Purple', 'Dark Red', 'Silver', 'Black', 'Blue', 'Blue Denim', 'Mustard', 'Eggplant', 'Barbie Pink', 'Mauve'],
+        top: '1.7%',
+        left: '-1.5%',
+        transform: 'rotate(178deg)'
     }
 }
 let Verasper = {
@@ -67,6 +73,7 @@ let Verasper = {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% auto',
+        braceletName: ['', 'Black', 'Camel', 'Red', 'Light blue', 'Blue', 'Avio', 'Orange', 'Brown', 'Dark brown', 'Light green', 'Dark green', 'Coral', 'Pastel pink', 'Lilac', 'Dark grey', 'Celestial'],
         colorNum: 17,
         top: 0,
         left: 0,
@@ -76,16 +83,18 @@ let Verasper = {
         backgroundImage: 'url("./img/Fish/1.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '95% auto',
-        top: '4%',
-        left: '6%',
-        transition: 'scale(0deg)'
+        backgroundSize: '47.5% auto',
+        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Purple', 'Dark Red', 'Silver', 'Black', 'Blue', 'Blue Denim', 'Mustard', 'Eggplant', 'Barbie Pink', 'Mauve'],
+        top: '3.5%',
+        left: '5.4%',
+        transform: 'rotate(185deg)'
     }
 }
 
 let activeBracelet = {
     activeStyle: Rombolino,
-    activStyleStr: 'Rombolino',
+    activListLink: 'photo2',
+    activeImg: 'Rombolino',
     colorBracelet: 1,
     colorFish: 1,
     sizeBracelet: 1,
@@ -110,10 +119,10 @@ function varStyle (element, obj) {
     element.style.transform = obj.transform;
 }
 
-listButton('Fish', document.querySelector('#itemsFColor'), 26);
-listButton(activeBracelet.activStyleStr, document.querySelector('#itemsBColor'), activeBracelet.activeStyle.bracelet.colorNum);
+listButton('Fish', document.querySelector('#itemsFColor'), 19, activeBracelet.activeStyle.fish.fishName);
+listButton(activeBracelet.activeImg, document.querySelector('#itemsBColor'), activeBracelet.activeStyle.bracelet.colorNum, activeBracelet.activeStyle.bracelet.braceletName);
 
-function listButton (files, block, num) {
+function listButton (files, block, num, name) {
     block.innerHTML = '';
     for (let i = 1; i <= num; i++) {
         var element = document.createElement('button');
@@ -122,24 +131,29 @@ function listButton (files, block, num) {
         if (files == 'Fish') {
             element.addEventListener('click', function () {
                 fish.style.backgroundImage = `url('./img/Fish/${i}.png')`;
+                document.querySelector('#colorFish').textContent = this.querySelector('h4').textContent;
                 for (let i = 0; i < document.querySelectorAll(`.colorFish`).length; i++) {
-                    document.querySelectorAll(`.colorFish`)[i].classList.remove('active')  ;                      
+                    document.querySelectorAll(`.colorFish`)[i].classList.remove('active')  ;  
+                    document.querySelector('.fonMain').classList.remove('active');                    
                 }
                 this.classList.add('active');
             })
+            element.innerHTML = `<img src="./img/${files}/${i}.png"/> <h4>${name[i]}</h4>`;
         } else {
             
                 element.addEventListener('click', function () {
-                    bracelet.style.backgroundImage = `url('./img/${files}/${i}.png')`;
+                    bracelet.style.backgroundImage = `url('./img/${activeBracelet.activeImg}/${i}.png')`;
+                    document.querySelector('#colorBracelet').textContent = this.querySelector('h4').textContent;
                     for (let i = 0; i < document.querySelectorAll(`.color${files}`).length; i++) {
-                        document.querySelectorAll(`.color${files}`)[i].classList.remove('active')  ;                      
+                        document.querySelectorAll(`.color${files}`)[i].classList.remove('active')  ;
+                        document.querySelector('.fonMain').classList.remove('active');                      
                     }
                     this.classList.add('active');
                 });
-            
+                element.innerHTML = `<img src="./img/${activeBracelet.activListLink}/${i}.jpg"/> <h4>${name[i]}</h4>`;
         }
-        element.style.height = 'auto';
-        element.innerHTML = `<img src="./img/${files}/${i}.png"/>`;
+        element.style.padding = '20px';
+        
     }
 }
 }
@@ -151,6 +165,7 @@ size.forEach(element => {
             item.classList.remove('active')
         })
         element.classList.add('active');
+        document.querySelector('.fonMain').classList.remove('active');
         document.querySelector('#sizeBracelet').textContent = element.textContent;
     })
 });
@@ -162,24 +177,31 @@ styleBracelet.forEach(item => {
     item.addEventListener('click', function () {
         
         document.querySelector('.styleBraceletH2').innerHTML = item.textContent;
-        activeBracelet.activStyleStr = item.name;
         console.log(item.name)
         
         switch (item.name) {
                 case 'Rombolino':
                     activeBracelet.activeStyle = Rombolino;
+                    activeBracelet.activeImg = 'Rombolino';
+                    activeBracelet.activListLink = 'photo2';
                 break;
 
                 case 'Flatsea':
                     activeBracelet.activeStyle = Flatsea;
+                    activeBracelet.activeImg = 'Flatsea';
+                    activeBracelet.activListLink = 'photo1';
                 break;
 
                 case 'Pamponero':
                     activeBracelet.activeStyle = Pamponero;
+                    activeBracelet.activeImg = 'Pamponero';
+                    activeBracelet.activListLink = 'photo1';
                 break;
 
                 case 'Verasper':
                     activeBracelet.activeStyle = Verasper;
+                    activeBracelet.activeImg = 'Verasper';
+                    activeBracelet.activListLink = 'photo2';
                 break;
 
                 
@@ -192,3 +214,19 @@ styleBracelet.forEach(item => {
     })
 })
 
+document.querySelector('#mainPrice').addEventListener('click', function () {
+    console.log(document.querySelector('.price'))
+    document.querySelector('.price').classList.toggle('active');
+
+});
+
+document.querySelector('.fon').addEventListener('click', function () {
+    console.log(document.querySelector('.price'))
+    document.querySelector('.price').classList.toggle('active');
+
+});
+
+
+document.querySelector('#numBracelet').addEventListener('input', function () {
+    document.querySelector('#mainPrice').innerHTML = `€ ${69*document.querySelector('#numBracelet').value}`;
+})

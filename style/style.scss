@@ -1,23 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face{font-family:'Product Sans';font-style:normal;font-weight:400;src:url(//fonts.gstatic.com/s/productsans/v9/pxiDypQkot1TnFhsFMOfGShVGdeOcEg.woff2)format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Product Sans';font-style:normal;font-weight:400;src:url(//fonts.gstatic.com/s/productsans/v9/pxiDypQkot1TnFhsFMOfGShVF9eO.woff2)format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
 
+
+
+* {
+    animation: none;
+}
 body, html {
     margin: 0;
     padding: 0;
     overflow:hidden;
 }
+
 * {
     box-sizing:border-box;
 }
 
 button {
     width: 100%;
+    display: block;
     border: 2px solid #FFFFFF;
-    height: 81px;
-    vertical-align: center;
-
+    min-height: 81px;
+    height: max-content;
+    max-height: 1000px;
     text-transform: uppercase;
 
-    font-family: Roboto;
+    h4 {
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        top: -200%;
+        margin: 0;
+        left: 0;
+        right: 0;
+        bottom: 100%;
+        overflow: hidden;
+        transition: 0.1s;
+        bottom: 100%;
+    }
+    overflow: hidden;
+    font-family: Product Sans;
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
@@ -27,7 +48,7 @@ button {
     transition: 0.5s;
 
     color: #0005;
-    font-family: 'Roboto';
+    font-family: 'Product Sans';
 
     position: relative;
     
@@ -59,6 +80,10 @@ button.active {
         left: 0%;
         transition: 0.5s;
     }
+    h4 {
+        top: 0%;
+        bottom: 0%;
+    }
 }
 
 li::marker {
@@ -69,7 +94,7 @@ li::marker {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: #EEEDED;
+    background: #eeeded62;
 
     display: flex;
     align-items: center;
@@ -83,14 +108,14 @@ li::marker {
         padding: 10px;
 
         h2 {
-            font-family: Roboto;
+            font-family: Product Sans;
             font-size: 36px;
             line-height: 42px;
             color: #000000;
         }
 
         .type {
-            font-family: Roboto;
+            font-family: Product Sans;
             font-style: normal;
             font-weight: normal;
             font-size: 18px;
@@ -101,14 +126,24 @@ li::marker {
             .var {
                 font-weight: bold;
             }
+            input {
+                border: 1px solid #000;
+                font-weight: bold;
+                background: none;
+                font-size: 1em;
+                max-width: 50px;
+                outline: none;
+            }
         }
 
         #mainPrice {
             text-align: right;
-            font-family: Roboto;
+            font-family: Product Sans;
             font-style: normal;
             font-weight: bold;
             font-size: 48px;
+            
+            white-space: nowrap;
             
             color: #000000;            
         }
@@ -124,12 +159,14 @@ li::marker {
             height: 100%;
             position:absolute;
             transition: 0.5s;
+            animation-duration: 0s;
         }
         .fish {
             width: 100%;
             height: 100%;
             position: absolute;
             transition: 0.5s;
+            animation-duration: 0s;
         }
     }
 
@@ -150,11 +187,11 @@ li::marker {
 
         
 
-        z-index: 100;
+        z-index: 1000;
         transition: 0.5s linear;
         
         height: 100vh;
-        width: 25%;
+        width: 40%;
         right: -100%;
         
         background: #EEEDED;
@@ -163,13 +200,15 @@ li::marker {
         flex-direction: column;
 
         .items {
-            overflow-y: scroll;
+            overflow-y: auto;
             overflow-x: hidden;
+            display: grid;
+            grid-template-columns: 50% 50%;
         }
 
         .close {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
 
             background: #C0C0C0;
             position: absolute;
@@ -177,13 +216,13 @@ li::marker {
             transition: 0.5s;
 
             top: 0;
-            left: -30px;
+            left: -40px;
 
             span {
                 height: 2px;
-                width: 30px;
+                width: 40px;
                 position: absolute;
-                top: 13px;
+                top: 17px;
                 background: rgba($color: #000000, $alpha: 0.5)
             }
             span:nth-child(1) {
@@ -204,7 +243,22 @@ li::marker {
     }
     .modal.active {right: 0;transition: 0.5s linear;}
 }
-
+.fonMain {
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    transition: .7s;
+    z-index: 10;
+    &.active {
+        position: absolute;
+        height: 500vh;
+        width: 100%;
+        background:rgba(244, 242, 242, 0.8);
+    }
+}
 @media (max-device-width: 770px) {
     .main-block {
         flex-direction: column;
@@ -217,27 +271,66 @@ li::marker {
             flex-direction: column;
             flex-wrap: wrap;
             height: min-content;
-            max-height: 270px;
-            
+            position: relative;
+            bottom: 253px;
+            transition: .5s;
+            .fon {
+                height: 0;
+                width: 0;
+                padding: 0;
+                margin: 0;
+                z-index: -1;
+            }
+            background:rgb(244, 242, 242);
+            &.active {
+                bottom: 0px;
+                .fon {
+                    position: absolute;
+                    height: 500vh;
+                    width: 100%;
+                    background:rgba(244, 242, 242, 0.5); 
+                }
+            }
+            height: 280px;
             border: 2px solid #fff;
-    
+            border-bottom: 10px solid rgb(160, 160, 160);
+            .styleBraceletH2 {
+                font-size: 24px
+            }
+            p {
+                font-size: 14px;
+                line-height: 10px;
+                margin: 2px;
+            }
             &>* {
-                width: 50%;
+                width: 100%;
             }
             p, h2 {
                 height: min-content;
                 margin: 10px;
             }
-
+            z-index: 500;
             #mainPrice {
-                height: 100%;
-                width: 30%;
+                cursor: pointer;
+                height: 60px;
+                display: inline-block;
+                width: min-content;
+                text-align: center;
+                padding: 10px;
+                padding-top: 24px;
+                margin: 0;
+                position: absolute;
+                bottom: -69px;
+                border-radius: 0px 0px 30px 30px;
+                right: 10px;
+                
+                background:rgb(160, 160, 160);
             }
         }
 
         .result {
             position: relative;
-            top: -20%;
+            top: -40%;
             width: 50%;
             transform: scale(2,2);    
             height: 50%;
@@ -258,6 +351,85 @@ li::marker {
         }
         .modal {
             width: 40%;
+        }
+    }
+    button {
+        width: 100%;
+        display: block;
+        border: 2px solid #FFFFFF;
+        min-height: 81px;
+        height: max-content;
+        max-height: 1000px;
+        text-transform: uppercase;
+    
+        h4 {
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            top: -200%;
+            margin: 0;
+            left: 0;
+            right: 0;
+            bottom: 0%;
+            overflow: hidden;
+            transition: 0.1s;
+            bottom: 0%;
+        }
+        overflow: hidden;
+        font-family: Product Sans;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+    
+        cursor: pointer;
+    
+        transition: 0.5s;
+    
+        color: #0005;
+        font-family: 'Product Sans';
+    
+        position: relative;
+        
+        img {
+            display:block;
+            width: 100%;
+        }
+    
+        &:before {
+            content: '';
+            width: 100%;
+            background: #fff;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            
+            left: 100%;
+            bottom: 0%;
+            transition: 0.5s;
+            z-index: -1;
+        }
+        z-index: 5;
+        &:before {
+            left: 0%;
+            transition: 0.5s;
+        }
+        h4 {
+            top: 0%;
+            bottom: 0%;
+        }
+    }
+    
+    button:hover,
+    button.active {
+        color: #000;
+        z-index: 5;
+        &:before {
+            left: 0%;
+            transition: 0.5s;
+        }
+        h4 {
+            top: 0%;
+            bottom: 0%;
         }
     }
 }

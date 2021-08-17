@@ -12,11 +12,17 @@
     <div class="wrapper">
         
         <div class="main-block">
+            <div class="fonMain"></div>
             <div class="price">
+                <div class="fon"></div>
                 <h2 class="styleBraceletH2">Rombolino</h2>                                       <!---->
 
-                <p class="type">Bracelet size: <span class="var"   id="sizeBracelet" >Medium (16cm / 6.3”)</span></p>
-
+                <p class="type">Bracelet size: <span class="var"   id="sizeBracelet" >L</span></p>
+                <p class="type">Leather color: <span class="var"   id="colorBracelet" >Black</span></p>
+                <p class="type">Gimmi color: <span class="var"   id="colorFish" >White</span></p>
+                <p class="type">Add to cart: <input type="number" id="numBracelet" min="1" value="1"></p>
+                
+                
                 <p id="mainPrice">€69</p>                                                <!---->
             </div>
 
@@ -27,10 +33,10 @@
 
             <div class="variation">
                 <ul>
-                    <li><button class="buttonVariator" onclick="document.querySelector('#bStyle').classList.add('active')">BRACELET STYLE</button></li>
-                    <li><button class="buttonVariator" onclick="document.querySelector('#bSize').classList.add('active')">BRACELET SIZE</button></li>
-                    <li><button class="buttonVariator" onclick="document.querySelector('#fColor').classList.add('active')">COLOR FISH</button></li>
-                    <li><button class="buttonVariator" onclick="document.querySelector('#bColor').classList.add('active')">BRACELET COLOR</button></li>
+                    <li><button class="buttonVariator" onclick="document.querySelector('.fonMain').classList.add('active'); document.querySelector('#bStyle').classList.add('active')">BRACELET STYLE</button></li>
+                    <li><button class="buttonVariator" onclick="document.querySelector('.fonMain').classList.add('active'); document.querySelector('#bSize').classList.add('active')">BRACELET SIZE</button></li>
+                    <li><button class="buttonVariator" onclick="document.querySelector('.fonMain').classList.add('active'); document.querySelector('#fColor').classList.add('active')">COLOR FISH</button></li>
+                    <li><button class="buttonVariator" onclick="document.querySelector('.fonMain').classList.add('active'); document.querySelector('#bColor').classList.add('active')">BRACELET COLOR</button></li>
                 </ul>
             </div>
 
@@ -38,12 +44,12 @@
                 <div class="close">
                     <div><span></span><span></span></div>
                 </div>
-
-                <button name="Rombolino" id="style">Rombolino</button>
-                <button name="Flatsea" id="style">Flatsea</button>
-                <button name="Pamponero" id="style">Pampo nero</button>
-                <button name="Verasper" id="style">Verasper</button>
-                
+                <div class="items">                    
+                    <button style="background-color: #fff;" onclick="document.querySelector('.fonMain').classList.remove('active');" name="Pamponero"  id="style"><img src="./img/style/PampoNero.jpg" alt=""><h4>Pampo nero</h4></button>
+                    <button style="background-color: #fff;" onclick="document.querySelector('.fonMain').classList.remove('active');" name="Flatsea"    id="style"><img src="./img/style/Flatsea.jpg" alt=""><h4>Flatsea</h4></button>
+                    <button style="background-color: #fff;" onclick="document.querySelector('.fonMain').classList.remove('active');" name="Rombolino"  id="style"><img src="./img/style/Rombolino.jpg" alt=""><h4>Rombolino</h4></button>
+                    <button style="background-color: #fff;" onclick="document.querySelector('.fonMain').classList.remove('active');" name="Verasper"   id="style" ><img src="./img/style/Verasper.jpg" alt=""><h4>Verasper</h4></button>
+                </div>
             </div>
 
             <div class="modal" id="bSize" >
@@ -51,10 +57,12 @@
                     <div><span></span><span></span></div>
                 </div>
                 
-                <button class="size">Small (15cm / 5.9”)</button>
-                <button class="size">Medium (16cm / 6.3”)</button>
-                <button class="size">Large (17cm / 6.7”)</button>
-                
+                <div class="items">
+                    <button class="size">XS</button>
+                    <button class="size">S</button>
+                    <button class="size">M</button>
+                    <button class="size">L</button> 
+                </div>
             </div>
 
             <div class="modal" id="bColor">

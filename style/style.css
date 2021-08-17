@@ -1,4 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/productsans/v9/pxiDypQkot1TnFhsFMOfGShVGdeOcEg.woff2) format("woff2");
+  unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/productsans/v9/pxiDypQkot1TnFhsFMOfGShVF9eO.woff2) format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+* {
+  -webkit-animation: none;
+          animation: none;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -12,11 +32,16 @@ body, html {
 
 button {
   width: 100%;
+  display: block;
   border: 2px solid #FFFFFF;
-  height: 81px;
-  vertical-align: center;
+  min-height: 81px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  max-height: 1000px;
   text-transform: uppercase;
-  font-family: Roboto;
+  overflow: hidden;
+  font-family: Product Sans;
   font-weight: bold;
   font-size: 24px;
   line-height: 28px;
@@ -24,8 +49,23 @@ button {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   color: #0005;
-  font-family: 'Roboto';
+  font-family: 'Product Sans';
   position: relative;
+}
+
+button h4 {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: -200%;
+  margin: 0;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  overflow: hidden;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  bottom: 100%;
 }
 
 button img {
@@ -60,6 +100,12 @@ button.active:before {
   transition: 0.5s;
 }
 
+button:hover h4,
+button.active h4 {
+  top: 0%;
+  bottom: 0%;
+}
+
 li::marker {
   font-size: 0;
 }
@@ -68,7 +114,7 @@ li::marker {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: #EEEDED;
+  background: #eeeded62;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,14 +136,14 @@ li::marker {
 }
 
 .main-block .price h2 {
-  font-family: Roboto;
+  font-family: Product Sans;
   font-size: 36px;
   line-height: 42px;
   color: #000000;
 }
 
 .main-block .price .type {
-  font-family: Roboto;
+  font-family: Product Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -115,12 +161,22 @@ li::marker {
   font-weight: bold;
 }
 
+.main-block .price .type input {
+  border: 1px solid #000;
+  font-weight: bold;
+  background: none;
+  font-size: 1em;
+  max-width: 50px;
+  outline: none;
+}
+
 .main-block .price #mainPrice {
   text-align: right;
-  font-family: Roboto;
+  font-family: Product Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
+  white-space: nowrap;
   color: #000000;
 }
 
@@ -139,6 +195,8 @@ li::marker {
   position: absolute;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  -webkit-animation-duration: 0s;
+          animation-duration: 0s;
 }
 
 .main-block .result .fish {
@@ -147,6 +205,8 @@ li::marker {
   position: absolute;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  -webkit-animation-duration: 0s;
+          animation-duration: 0s;
 }
 
 .main-block .variation {
@@ -164,11 +224,11 @@ li::marker {
 
 .main-block .modal {
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
   -webkit-transition: 0.5s linear;
   transition: 0.5s linear;
   height: 100vh;
-  width: 25%;
+  width: 40%;
   right: -100%;
   background: #EEEDED;
   display: -webkit-box;
@@ -181,26 +241,30 @@ li::marker {
 }
 
 .main-block .modal .items {
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
 }
 
 .main-block .modal .close {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background: #C0C0C0;
   position: absolute;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   top: 0;
-  left: -30px;
+  left: -40px;
 }
 
 .main-block .modal .close span {
   height: 2px;
-  width: 30px;
+  width: 40px;
   position: absolute;
-  top: 13px;
+  top: 17px;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -224,10 +288,29 @@ li::marker {
   background: black;
 }
 
-.main-block .active {
+.main-block .modal.active {
   right: 0;
   -webkit-transition: 0.5s linear;
   transition: 0.5s linear;
+}
+
+.fonMain {
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-transition: .7s;
+  transition: .7s;
+  z-index: 10;
+}
+
+.fonMain.active {
+  position: absolute;
+  height: 500vh;
+  width: 100%;
+  background: rgba(244, 242, 242, 0.8);
 }
 
 @media (max-device-width: 770px) {
@@ -253,11 +336,42 @@ li::marker {
     height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
-    max-height: 270px;
+    position: relative;
+    bottom: 253px;
+    -webkit-transition: .5s;
+    transition: .5s;
+    background: #f4f2f2;
+    height: 280px;
     border: 2px solid #fff;
+    border-bottom: 10px solid #a0a0a0;
+    z-index: 500;
+  }
+  .main-block .price .fon {
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    z-index: -1;
+  }
+  .main-block .price.active {
+    bottom: 0px;
+  }
+  .main-block .price.active .fon {
+    position: absolute;
+    height: 500vh;
+    width: 100%;
+    background: rgba(244, 242, 242, 0.5);
+  }
+  .main-block .price .styleBraceletH2 {
+    font-size: 24px;
+  }
+  .main-block .price p {
+    font-size: 14px;
+    line-height: 10px;
+    margin: 2px;
   }
   .main-block .price > * {
-    width: 50%;
+    width: 100%;
   }
   .main-block .price p, .main-block .price h2 {
     height: -webkit-min-content;
@@ -266,12 +380,25 @@ li::marker {
     margin: 10px;
   }
   .main-block .price #mainPrice {
-    height: 100%;
-    width: 30%;
+    cursor: pointer;
+    height: 60px;
+    display: inline-block;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    text-align: center;
+    padding: 10px;
+    padding-top: 24px;
+    margin: 0;
+    position: absolute;
+    bottom: -69px;
+    border-radius: 0px 0px 30px 30px;
+    right: 10px;
+    background: #a0a0a0;
   }
   .main-block .result {
     position: relative;
-    top: -20%;
+    top: -40%;
     width: 50%;
     -webkit-transform: scale(2, 2);
             transform: scale(2, 2);
@@ -294,6 +421,85 @@ li::marker {
   }
   .main-block .modal {
     width: 40%;
+  }
+  button {
+    width: 100%;
+    display: block;
+    border: 2px solid #FFFFFF;
+    min-height: 81px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    max-height: 1000px;
+    text-transform: uppercase;
+    overflow: hidden;
+    font-family: Product Sans;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    color: #0005;
+    font-family: 'Product Sans';
+    position: relative;
+    z-index: 5;
+  }
+  button h4 {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: -200%;
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: 0%;
+    overflow: hidden;
+    -webkit-transition: 0.1s;
+    transition: 0.1s;
+    bottom: 0%;
+  }
+  button img {
+    display: block;
+    width: 100%;
+  }
+  button:before {
+    content: '';
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    bottom: 0%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    z-index: -1;
+  }
+  button:before {
+    left: 0%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  button h4 {
+    top: 0%;
+    bottom: 0%;
+  }
+  button:hover,
+  button.active {
+    color: #000;
+    z-index: 5;
+  }
+  button:hover:before,
+  button.active:before {
+    left: 0%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  button:hover h4,
+  button.active h4 {
+    top: 0%;
+    bottom: 0%;
   }
 }
 
