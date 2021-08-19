@@ -11,11 +11,11 @@ let Rombolino = {
         transform: 'rotate(0deg)'
     },
     fish: {
-        backgroundImage: 'url("./img/Fish/1.png")',
+        backgroundImage: 'url("./img/Fish/11.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '58% auto',
-        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Purple', 'Dark Red', 'Silver', 'Black', 'Blue', 'Blue Denim', 'Mustard', 'Eggplant', 'Barbie Pink', 'Mauve'],
+        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Green',  'Dark Red', 'Silver', 'Black', 'Blue', 'Taupe', 'Mustard', 'Eggplant', 'Barbie Pink', 'Pale Pink', 'Mauve'],
         top: '2.9%',
         left: '0.5%',
         transform: 'rotate(180deg)'
@@ -23,7 +23,7 @@ let Rombolino = {
 }
 let Flatsea = {
     bracelet: {
-        backgroundImage: 'url("./img/Flatsea/1.png")',
+        backgroundImage: 'url("./img/Flatsea/3.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% auto',
@@ -34,11 +34,11 @@ let Flatsea = {
         transform: 'rotate(0deg)'
     },
     fish: {
-        backgroundImage: 'url("./img/Fish/1.png")',
+        backgroundImage: 'url("./img/Fish/11.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '65.5% auto',
-        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Purple', 'Dark Red', 'Silver', 'Black', 'Blue', 'Blue Denim', 'Mustard', 'Eggplant', 'Barbie Pink', 'Mauve'],
+        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Green',  'Dark Red', 'Silver', 'Black', 'Blue', 'Taupe', 'Mustard', 'Eggplant', 'Barbie Pink', 'Pale Pink', 'Mauve'],
         top: '4.5%',
         left: '-0.5%',
         transform: 'rotate(12.5deg)'
@@ -46,7 +46,7 @@ let Flatsea = {
 }
 let Pamponero = {
     bracelet: {
-        backgroundImage: 'url("./img/Pamponero/1.png")',
+        backgroundImage: 'url("./img/Pamponero/13.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '130% auto',
@@ -57,11 +57,11 @@ let Pamponero = {
         transform: 'rotate(0deg)'
     },
     fish: {
-        backgroundImage: 'url("./img/Fish/1.png")',
+        backgroundImage: 'url("./img/Fish/11.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '57% auto',
-        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Purple', 'Dark Red', 'Silver', 'Black', 'Blue', 'Blue Denim', 'Mustard', 'Eggplant', 'Barbie Pink', 'Mauve'],
+        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Green',  'Dark Red', 'Silver', 'Black', 'Blue', 'Taupe', 'Mustard', 'Eggplant', 'Barbie Pink', 'Pale Pink', 'Mauve'],
         top: '1.7%',
         left: '-1.5%',
         transform: 'rotate(178deg)'
@@ -80,11 +80,11 @@ let Verasper = {
         transform: 'rotate(0deg)'
     },
     fish: {
-        backgroundImage: 'url("./img/Fish/1.png")',
+        backgroundImage: 'url("./img/Fish/11.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '47.5% auto',
-        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Purple', 'Dark Red', 'Silver', 'Black', 'Blue', 'Blue Denim', 'Mustard', 'Eggplant', 'Barbie Pink', 'Mauve'],
+        fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Green',  'Dark Red', 'Silver', 'Black', 'Blue', 'Taupe', 'Mustard', 'Eggplant', 'Barbie Pink', 'Pale Pink', 'Mauve'],
         top: '3.5%',
         left: '5.4%',
         transform: 'rotate(185deg)'
@@ -178,30 +178,38 @@ styleBracelet.forEach(item => {
         
         document.querySelector('.styleBraceletH2').innerHTML = item.textContent;
         console.log(item.name)
-        
+
         switch (item.name) {
                 case 'Rombolino':
                     activeBracelet.activeStyle = Rombolino;
                     activeBracelet.activeImg = 'Rombolino';
                     activeBracelet.activListLink = 'photo2';
+
+                    document.querySelector('#colorBracelet').textContent = activeBracelet.activeStyle.bracelet.braceletName[1];
                 break;
 
                 case 'Flatsea':
                     activeBracelet.activeStyle = Flatsea;
                     activeBracelet.activeImg = 'Flatsea';
                     activeBracelet.activListLink = 'photo1';
+
+                    document.querySelector('#colorBracelet').textContent = activeBracelet.activeStyle.bracelet.braceletName[3];
                 break;
 
                 case 'Pamponero':
                     activeBracelet.activeStyle = Pamponero;
                     activeBracelet.activeImg = 'Pamponero';
                     activeBracelet.activListLink = 'photo1';
+
+                    document.querySelector('#colorBracelet').textContent = activeBracelet.activeStyle.bracelet.braceletName[13];
                 break;
 
                 case 'Verasper':
                     activeBracelet.activeStyle = Verasper;
                     activeBracelet.activeImg = 'Verasper';
                     activeBracelet.activListLink = 'photo2';
+
+                    document.querySelector('#colorBracelet').textContent = activeBracelet.activeStyle.bracelet.braceletName[1];
                 break;
 
                 
@@ -210,6 +218,7 @@ styleBracelet.forEach(item => {
                 activeBracelet.activeStyle = Rombolino;
                 break;
         }
+        document.querySelector('#colorFish').textContent     = activeBracelet.activeStyle.fish.fishName[11];
         reloadStyle();
     })
 })
