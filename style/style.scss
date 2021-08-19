@@ -2,9 +2,7 @@
 
 
 
-* {
-    animation: none;
-}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -244,6 +242,7 @@ li::marker {
     .modal.active {right: 0;transition: 0.5s linear;}
 }
 .fonMain {
+    position: absolute;
     height: 0;
     width: 0;
     top: 0;
@@ -253,10 +252,9 @@ li::marker {
     transition: .7s;
     z-index: 10;
     &.active {
-        position: absolute;
         height: 500vh;
         width: 100%;
-        background:rgba(244, 242, 242, 0.8);
+        background:rgba(244, 242, 242, 0.5);
     }
 }
 @media (max-device-width: 770px) {
@@ -265,14 +263,18 @@ li::marker {
         width: 100%;
         height: 100vh;
 
+        .price> .fon {
+            opacity: 0.5;
+        }
+
         .price {
             display: flex;
             width: 100%;
             flex-direction: column;
             flex-wrap: wrap;
             height: min-content;
-            position: relative;
-            bottom: 253px;
+            position: absolute;
+            top: -270px;
             transition: .5s;
             .fon {
                 height: 0;
@@ -283,12 +285,12 @@ li::marker {
             }
             background:rgb(244, 242, 242);
             &.active {
-                bottom: 0px;
+                top: 0;
                 .fon {
                     position: absolute;
                     height: 500vh;
                     width: 100%;
-                    background:rgba(244, 242, 242, 0.5); 
+                    background:rgba(244, 242, 242, 0.2); 
                 }
             }
             height: 280px;
@@ -330,7 +332,7 @@ li::marker {
 
         .result {
             position: relative;
-            top: -40%;
+            top: 15%;
             width: 50%;
             transform: scale(2,2);    
             height: 50%;
@@ -341,16 +343,38 @@ li::marker {
             position: fixed;
             bottom: 0;
             height: auto;
+            z-index: 10000;
             ul {
                 display: grid;
                 width: 100%;
                 grid-template-columns: 50% 50%;
-                grid-template-rows: 1fr 1fr;
+                grid-template-rows: 100px 100px;
                 
             }
         }
         .modal {
-            width: 40%;
+            width: 100%;
+            height: 15vh;
+            top: auto;
+            bottom: 202px;
+            right: -200%;
+            .close {
+                left: 0;
+                top: -40px;
+            }
+            .items {
+                width: 100%;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                height: 100%;
+                display: flex;
+                &>* {
+                    flex: 0 0 50%;
+                }
+                button> h4 {
+                    font-size: 14px;
+                }
+            }
         }
     }
     button {
@@ -435,9 +459,7 @@ li::marker {
 }
 
 @media (max-device-width: 500px) {
-    .main-block {
-        .modal {
-            width: 70%;
+    .main-block    .modal {
+            width: 100%;
         }
-    }
 }
