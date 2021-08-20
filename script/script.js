@@ -74,7 +74,7 @@ let Verasper = {
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% auto',
         braceletName: ['', 'Black', 'Camel', 'Red', 'Light blue', 'Blue', 'Avio', 'Orange', 'Brown', 'Dark brown', 'Light green', 'Dark green', 'Coral', 'Pastel pink', 'Lilac', 'Dark grey', 'Celestial'],
-        colorNum: 17,
+        colorNum: 16,
         top: 0,
         left: 0,
         transform: 'rotate(0deg)'
