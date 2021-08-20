@@ -23,12 +23,12 @@ let Rombolino = {
 }
 let Flatsea = {
     bracelet: {
-        backgroundImage: 'url("./img/Flatsea/3.png")',
+        backgroundImage: 'url("./img/Flatsea/4.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% auto',
         braceletName: ['', 'Grey', 'Beige', 'Fucsia', 'Purple', 'Orange', 'Red', 'Dark red', 'Bordeaux','Mud', 'Dark brown', 'Dark chocolate', 'Turquoise', 'Dark blue'],
-        colorNum: 12,
+        colorNum: 13,
         top: 0,
         left: 0,
         transform: 'rotate(0deg)'
