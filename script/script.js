@@ -24,14 +24,14 @@ let Rombolino = {
 let Flatsea = {
     bracelet: {
         backgroundImage: 'url("./img/Flatsea/4.png")',
-        backgroundPosition: 'center',
+        backgroundPosition: '20% center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% auto',
         braceletName: ['', 'Grey', 'Beige', 'Fucsia', 'Purple', 'Orange', 'Red', 'Dark red', 'Bordeaux','Mud', 'Dark brown', 'Dark chocolate', 'Turquoise', 'Dark blue'],
         colorNum: 13,
         top: 0,
         left: 0,
-        transform: 'rotate(0deg)'
+        transform: 'rotate(0deg) translateX(6%)'
     },
     fish: {
         backgroundImage: 'url("./img/Fish/11.png")',
@@ -41,7 +41,7 @@ let Flatsea = {
         fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Green',  'Dark Red', 'Silver', 'Black', 'Blue', 'Taupe', 'Mustard', 'Eggplant', 'Barbie Pink', 'Pale Pink', 'Mauve'],
         top: '4.5%',
         left: '-0.5%',
-        transform: 'rotate(12.5deg)'
+        transform: 'rotate(12.5deg) translateX(6%)'
     }
 }
 let Pamponero = {
@@ -74,7 +74,7 @@ let Verasper = {
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% auto',
         braceletName: ['', 'Black', 'Camel', 'Red', 'Light blue', 'Blue', 'Avio', 'Orange', 'Brown', 'Dark brown', 'Light green', 'Dark green', 'Coral', 'Pastel pink', 'Lilac', 'Dark grey', 'Celestial'],
-        colorNum: 17,
+        colorNum: 16,
         top: 0,
         left: 0,
         transform: 'rotate(0deg)'

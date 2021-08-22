@@ -11,3 +11,14 @@ closeM.forEach(function (item, id) {
     });
 });
 
+modal.forEach(element => {
+    element.querySelectorAll('button').forEach(item => {
+        item.addEventListener('click', function () {
+            modal.forEach(element => {
+                element.classList.remove('active');
+            });
+        })
+    })
+});
+
+
