@@ -14,9 +14,10 @@ closeM.forEach(function (item, id) {
 modal.forEach(element => {
     element.querySelectorAll('button').forEach(item => {
         item.addEventListener('click', function () {
-            modal.forEach(element => {
-                element.classList.remove('active');
-            });
+            document.querySelector('.result').style.filter = 'blur(1.5rem)';
+            setTimeout(() => {
+                document.querySelector('.result').style.filter = 'blur(0rem)';
+            }, 500);
         })
     })
 });

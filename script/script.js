@@ -37,9 +37,9 @@ let Flatsea = {
         backgroundImage: 'url("./img/Fish/11.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '65.5% auto',
+        backgroundSize: '70% auto',
         fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Green',  'Dark Red', 'Silver', 'Black', 'Blue', 'Taupe', 'Mustard', 'Eggplant', 'Barbie Pink', 'Pale Pink', 'Mauve'],
-        top: '4.5%',
+        top: '3.9%',
         left: '-0.5%',
         transform: 'rotate(12.5deg) translateX(6%)'
     }
@@ -89,6 +89,14 @@ let Verasper = {
         left: '5.4%',
         transform: 'rotate(185deg)'
     }
+}
+
+document.querySelector('body').style.filter = 'blur(1.5rem)';
+document.querySelector('body').style.transition = '.5s';
+window.onload = function () {
+    setTimeout(() => {
+        document.querySelector('body').style.filter = 'blur(0rem)';
+    }, 1000);
 }
 
 let activeBracelet = {
