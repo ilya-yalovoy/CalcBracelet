@@ -14,10 +14,10 @@ let Rombolino = {
         backgroundImage: 'url("./img/Fish/11.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '58% auto',
+        backgroundSize: '63% auto',
         fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Green',  'Dark Red', 'Silver', 'Black', 'Blue', 'Taupe', 'Mustard', 'Eggplant', 'Barbie Pink', 'Pale Pink', 'Mauve'],
-        top: '2.9%',
-        left: '0.5%',
+        top: '3%',
+        left: '1%',
         transform: 'rotate(180deg)'
     }
 }
@@ -39,7 +39,7 @@ let Flatsea = {
         backgroundRepeat: 'no-repeat',
         backgroundSize: '70% auto',
         fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Green',  'Dark Red', 'Silver', 'Black', 'Blue', 'Taupe', 'Mustard', 'Eggplant', 'Barbie Pink', 'Pale Pink', 'Mauve'],
-        top: '3.9%',
+        top: '3.7%',
         left: '-0.5%',
         transform: 'rotate(12.5deg) translateX(6%)'
     }
@@ -60,11 +60,11 @@ let Pamponero = {
         backgroundImage: 'url("./img/Fish/11.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '57% auto',
+        backgroundSize: '62% auto',
         fishName: ['', 'Night Blue', 'Cream Yellow', 'Lemon Yellow', 'Pale Yellow', 'Red', 'Tan', 'Army Green', 'Lavender', 'Green',  'Dark Red', 'Silver', 'Black', 'Blue', 'Taupe', 'Mustard', 'Eggplant', 'Barbie Pink', 'Pale Pink', 'Mauve'],
-        top: '1.7%',
+        top: '1.9%',
         left: '-1.5%',
-        transform: 'rotate(178deg)'
+        transform: 'rotate(179deg)'
     }
 }
 let Verasper = {
@@ -100,7 +100,7 @@ window.onload = function () {
 }
 
 let activeBracelet = {
-    activeStyle: Rombolino,
+    activeStyle: Verasper,
     activListLink: 'photo2',
     activeImg: 'Rombolino',
     colorBracelet: 1,
