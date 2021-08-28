@@ -100,7 +100,7 @@ window.onload = function () {
 }
 
 let activeBracelet = {
-    activeStyle: Verasper,
+    activeStyle: Rombolino,
     activListLink: 'photo2',
     activeImg: 'Rombolino',
     colorBracelet: 1,
