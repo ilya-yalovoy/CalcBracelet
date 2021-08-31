@@ -115,7 +115,7 @@ function reloadStyle() {
       bracelet = document.getElementsByClassName('bracelet')[0];
 
 varStyle(fish, activeBracelet.activeStyle.fish)
-varStyle(bracelet, activeBracelet.activeStyle.bracelet)}
+varStyle(bracelet, activeBracelet.activeStyle.bracelet)
 
 function varStyle (element, obj) {
     element.style.backgroundImage = obj.backgroundImage;
@@ -138,7 +138,7 @@ function listButton (files, block, num, name) {
         block.append(element);
         if (files == 'Fish') {
             element.addEventListener('click', function () {
-                fish.style.backgroundImage = `url('./img/Fish/${i}.png')`;
+                fish.style.backgroundImage = `url('https://ilya-yalovoy.github.io/CalcBracelet/img/Fish/${i}.png')`;
                 document.querySelector('#colorFish').textContent = this.querySelector('h4').textContent;
                 for (let i = 0; i < document.querySelectorAll(`.colorFish`).length; i++) {
                     document.querySelectorAll(`.colorFish`)[i].classList.remove('active')  ;  
@@ -146,7 +146,7 @@ function listButton (files, block, num, name) {
                 }
                 this.classList.add('active');
             })
-            element.innerHTML = `<img src="./img/${files}/${i}.png"/> <h4>${name[i]}</h4>`;
+            element.innerHTML = `<img src="https://ilya-yalovoy.github.io/CalcBracelet/img/${files}/${i}.png"/> <h4>${name[i]}</h4>`;
         } else {
             
                 element.addEventListener('click', function () {
@@ -158,7 +158,7 @@ function listButton (files, block, num, name) {
                     }
                     this.classList.add('active');
                 });
-                element.innerHTML = `<img src="https://ilya-yalovoy.github.io/CalcBracelet/img/${activeBracelet.activListLink}/${i}.jpg"/> <h4>${name[i]}</h4>`;
+                element.innerHTML = `<img src="./img/${activeBracelet.activListLink}/${i}.jpg"/> <h4>${name[i]}</h4>`;
         }
         element.style.padding = '20px';
         
