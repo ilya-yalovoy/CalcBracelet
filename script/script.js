@@ -150,7 +150,7 @@ function listButton (files, block, num, name) {
         } else {
             
                 element.addEventListener('click', function () {
-                    bracelet.style.backgroundImage = `url('./img/${activeBracelet.activeImg}/${i}.png')`;
+                    bracelet.style.backgroundImage = `url('https://ilya-yalovoy.github.io/CalcBracelet/img/${activeBracelet.activeImg}/${i}.png')`;
                     document.querySelector('#colorBracelet').textContent = this.querySelector('h4').textContent;
                     for (let i = 0; i < document.querySelectorAll(`.color${files}`).length; i++) {
                         document.querySelectorAll(`.color${files}`)[i].classList.remove('active')  ;
@@ -158,7 +158,7 @@ function listButton (files, block, num, name) {
                     }
                     this.classList.add('active');
                 });
-                element.innerHTML = `<img src="./img/${activeBracelet.activListLink}/${i}.jpg"/> <h4>${name[i]}</h4>`;
+                element.innerHTML = `<img src="https://ilya-yalovoy.github.io/CalcBracelet/img/${activeBracelet.activListLink}/${i}.jpg"/> <h4>${name[i]}</h4>`;
         }
         element.style.padding = '20px';
         
