@@ -23,7 +23,7 @@ let Rombolino = {
 }
 let Flatsea = {
     bracelet: {
-        backgroundImage: 'url("./img/Flatsea/4.png")',
+        backgroundImage: 'url("https://ilya-yalovoy.github.io/CalcBracelet/img/Flatsea/4.png")',
         backgroundPosition: '20% center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% auto',
@@ -34,7 +34,7 @@ let Flatsea = {
         transform: 'rotate(0deg) translateX(6%)'
     },
     fish: {
-        backgroundImage: 'url("./img/Fish/11.png")',
+        backgroundImage: 'url("https://ilya-yalovoy.github.io/CalcBracelet/img/Fish/11.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '70% auto',
@@ -46,7 +46,7 @@ let Flatsea = {
 }
 let Pamponero = {
     bracelet: {
-        backgroundImage: 'url("./img/Pamponero/13.png")',
+        backgroundImage: 'url("https://ilya-yalovoy.github.io/CalcBracelet/img/Pamponero/13.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '130% auto',
@@ -57,7 +57,7 @@ let Pamponero = {
         transform: 'rotate(0deg)'
     },
     fish: {
-        backgroundImage: 'url("./img/Fish/11.png")',
+        backgroundImage: 'url("https://ilya-yalovoy.github.io/CalcBracelet/img/Fish/11.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '62% auto',
@@ -69,7 +69,7 @@ let Pamponero = {
 }
 let Verasper = {
     bracelet: {
-        backgroundImage: 'url("./img/Verasper/1.png")',
+        backgroundImage: 'url("https://ilya-yalovoy.github.io/CalcBracelet/img/Verasper/1.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% auto',
@@ -80,7 +80,7 @@ let Verasper = {
         transform: 'rotate(0deg)'
     },
     fish: {
-        backgroundImage: 'url("./img/Fish/11.png")',
+        backgroundImage: 'url("https://ilya-yalovoy.github.io/CalcBracelet/img/Fish/11.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '47.5% auto',
@@ -158,7 +158,7 @@ function listButton (files, block, num, name) {
                     }
                     this.classList.add('active');
                 });
-                element.innerHTML = `<img src="./img/${activeBracelet.activListLink}/${i}.jpg"/> <h4>${name[i]}</h4>`;
+                element.innerHTML = `<img src="https://ilya-yalovoy.github.io/CalcBracelet/img/${activeBracelet.activListLink}/${i}.jpg"/> <h4>${name[i]}</h4>`;
         }
         element.style.padding = '20px';
         
