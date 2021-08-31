@@ -115,7 +115,7 @@ function reloadStyle() {
       bracelet = document.getElementsByClassName('bracelet')[0];
 
 varStyle(fish, activeBracelet.activeStyle.fish)
-varStyle(bracelet, activeBracelet.activeStyle.bracelet)
+varStyle(bracelet, activeBracelet.activeStyle.bracelet)}
 
 function varStyle (element, obj) {
     element.style.backgroundImage = obj.backgroundImage;
