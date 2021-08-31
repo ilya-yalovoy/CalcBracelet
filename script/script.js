@@ -1,6 +1,6 @@
 let Rombolino = {
     bracelet: {
-        backgroundImage: 'url("./img/Rombolino/1.png")',
+        backgroundImage: 'url("https://ilya-yalovoy.github.io/CalcBracelet/img/Rombolino/1.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% auto',
@@ -11,7 +11,7 @@ let Rombolino = {
         transform: 'rotate(0deg)'
     },
     fish: {
-        backgroundImage: 'url("./img/Fish/11.png")',
+        backgroundImage: 'url("https://ilya-yalovoy.github.io/CalcBracelet/img/Fish/11.png")',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: '63% auto',
